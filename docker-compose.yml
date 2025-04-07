@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"  # Port exposé pour le mobile
+    volumes:
+      - ./backend:/app  # Hot-reload pour le code Python
+    environment:
+      - PYTHONUNBUFFERED=1  # Meilleurs logs
